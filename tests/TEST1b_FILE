@@ -1,0 +1,10 @@
+Welcome to phonebook service!
+Available commands: [Add, Get, Edit, Delete, List]
+To close the phonebook press Enter
+Choose a command: Enter name: Alex's number: 1
+
+Choose next command: Enter name: Alex's number deleted
+
+Choose next command: List of all entries is empty
+
+Choose next command: 
