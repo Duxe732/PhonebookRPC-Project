@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package phonebook;
+
+service Phonebook {
+  rpc AddEntry(AddRequest) returns (AddResponse);
+  rpc GetNumber(GetRequest) returns (GetResponse);
+  rpc EditEntry(EditRequest) returns (EditResponse);
+  rpc DeleteEntry(DeleteRequest) returns (DeleteResponse);
+  rpc ListEntries(ListEntriesRequest) returns (ListEntriesResponse);
+}
+
+message AddRequest {
+  string name = 1;
+  string number = 2;
+  int32 ttl_seconds = 3;
+}
+
+message AddResponse {
+  bool success = 1;
+  string message = 2;
+  string name = 3;
+  string number = 4;
+  int64 expires_at = 5;
+}
+
+message GetRequest {
+  string name = 1;
+}
+
+message GetResponse {
+  string number = 1;
+  int64 expires_at = 2;
+}
+
+message EditRequest {
+  string name = 1;
+  optional string new_number = 2;
+  optional int32 new_ttl_seconds = 3;
+}
+
+message EditResponse {
+  bool success = 1;
+  string message = 2;
+  string new_number = 3;
+  int64 new_expires_at = 4;
+}
+
+message DeleteRequest {
+  string name = 1;
+}
+
+message DeleteResponse {
+  bool success = 1;
+}
+
+message ListEntriesRequest {
+}
+
+message Entry {
+  string name = 1;
+  string number = 2;
+  int64 expires_at = 3;
+}
+
+message ListEntriesResponse {
+    repeated Entry entries = 1;
+}
