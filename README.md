@@ -3,8 +3,6 @@
 **Design a remote phonebook service using RPC where clients can query and manage
 contact information. The backend can be memory-based or use a database for
 persistence.**  
-**Variant A: A modifiable phonebook where users can add/edit/delete entries (all
-in-memory)**
 
 ### How to launch the server and clients?
 One can easily run the server by typing in the shell this command:  
@@ -30,4 +28,4 @@ for i in tests/test*.sh; do $i; done
 ```
 It's important that before the start of the tests the server should not be already started.
 The test no. 1 checks the correctness of the sequential access to the server. The client 1 adds a contact and the client 2 checks that the new data are correct.  
-The test no. 2 first runs two clients in parallel, both of them add a contact. Then the clinet 3 checks the contact list's correctness.
+The test no. 2 first runs two clients in parallel, both of them add a contact. Then the client 3 checks the contact list's correctness.
